@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="2" total="4" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="25721" started-at="2023-07-08T07:33:49Z" finished-at="2023-07-08T07:34:15Z">
+    <groups>
+    </groups>
+    <test name="ChromeTest" duration-ms="25721" started-at="2023-07-08T07:33:49Z" finished-at="2023-07-08T07:34:15Z">
+      <class name="com.WebstaurantStore.Tests.HomePageTest">
+        <test-method status="PASS" signature="init(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@79ad8b2f]" name="init" is-config="true" duration-ms="3843" started-at="2023-07-08T07:33:49Z" finished-at="2023-07-08T07:33:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="verifyHomePageAndSearchProduct()[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@79ad8b2f]" name="verifyHomePageAndSearchProduct" duration-ms="1608" started-at="2023-07-08T07:33:53Z" finished-at="2023-07-08T07:33:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePageAndSearchProduct -->
+      </class> <!-- com.WebstaurantStore.Tests.HomePageTest -->
+      <class name="com.WebstaurantStore.Tests.SearchResultTest">
+        <test-method status="PASS" signature="verifySearchAndAddToCart()[pri:0, instance:com.WebstaurantStore.Tests.SearchResultTest@1df82230]" name="verifySearchAndAddToCart" duration-ms="20257" started-at="2023-07-08T07:33:55Z" finished-at="2023-07-08T07:34:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchAndAddToCart -->
+      </class> <!-- com.WebstaurantStore.Tests.SearchResultTest -->
+    </test> <!-- ChromeTest -->
+  </suite> <!-- Suite -->
+</testng-results>
