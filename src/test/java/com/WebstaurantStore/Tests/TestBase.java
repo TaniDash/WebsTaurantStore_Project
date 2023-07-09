@@ -34,9 +34,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestBase {
 
 	public static WebDriver driver;
-	public ExtentReports extent;
-	public ExtentSparkReporter sparkReporter;
-	public ExtentTest logger;
 	static String url;
 	static String browser;
 
@@ -53,11 +50,9 @@ public class TestBase {
 	}
 
 	
-	
 	@Parameters("browser")
 	@BeforeTest
 	public void init(String browser, Method testMethod) {
-//		logger = extent.createTest(testMethod.getName());
 		readConfig();
 		
 		if (browser.equalsIgnoreCase("chrome")) {
@@ -87,32 +82,7 @@ public class TestBase {
 	
 	
 	
-//	@BeforeSuite
-	public void generateReport() {
-		sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") +"reports "+"WebstaurantStoreExtentReport.html");
-		extent = new ExtentReports();
-		extent.attachReporter(sparkReporter);
-		sparkReporter.config().setTheme(Theme.STANDARD);
-		sparkReporter.config().setDocumentTitle("Automation Report");
-		sparkReporter.config().setReportName("Automation Test Results by Tania Dash");
 
-	}
-
-//	@AfterMethod
-	public void afterMethod(ITestResult result) {
-		if (result.getStatus() == ITestResult.FAILURE) {
-			logger.log(Status.FAIL, result.getThrowable());
-		} else if (result.getStatus() == ITestResult.SUCCESS) {
-			logger.log(Status.PASS, result.getTestName());
-		} else {
-			logger.log(Status.SKIP, result.getTestName());
-		}
-	}
-
-//	@AfterSuite
-	public void afterTest() {
-		extent.flush();
-	}
 
 
 

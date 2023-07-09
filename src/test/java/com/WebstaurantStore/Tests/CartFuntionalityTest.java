@@ -10,7 +10,7 @@ public class CartFuntionalityTest extends TestBase{
 	CartFuntionalityPage cartFuntionalityPage;
 	SoftAssert softAssert;
 	
-	@Test
+	@Test (priority=3)
 	public void verifyCartFunctionality() throws InterruptedException {		
 		cartFuntionalityPage = new CartFuntionalityPage(driver);
 		softAssert = new SoftAssert();

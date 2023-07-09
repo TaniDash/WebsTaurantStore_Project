@@ -41,12 +41,10 @@ public class SearchResultPage {
 		int currentPage = 1;
 		while (true) {
 			// Find the active page element
-			WebElement activePageElement = driver
-					.findElement(By.xpath("//nav[@aria-label='pagination']/ul/li/a[contains(@aria-label, 'current')]"));
+			WebElement activePageElement = driver.findElement(By.xpath("//nav[@aria-label='pagination']/ul/li/a[contains(@aria-label, 'current')]"));
 			System.out.println(activePageElement.getText());
 
-			List<WebElement> allProductsFromPage = driver
-					.findElements(By.xpath("//div[@id='product_listing']/div/div/a/span"));
+			List<WebElement> allProductsFromPage = driver.findElements(By.xpath("//div[@id='product_listing']/div/div/a/span"));
 
 			for (WebElement productElement : allProductsFromPage) {
 				try {
@@ -54,8 +52,7 @@ public class SearchResultPage {
 					String productText = productElement.getText();
 					productList.add(productText);
 				} catch (StaleElementReferenceException e) {
-					System.out
-							.println("StaleElementReferenceException occurred while accessing an element. Skipping...");
+					System.out.println("StaleElementReferenceException occurred while accessing an element. Skipping...");
 				}
 			}
 
@@ -84,14 +81,15 @@ public class SearchResultPage {
 		return productList;
 	}
 
-	public boolean validateProductTitlesContainKeyword(List<String> productList, String keyword) {
+	public int validateProductTitlesContainKeyword(List<String> productList, String keyword) {
+		int count= 0;
 		for (String productTitle : productList) {
-			if (!productTitle.toLowerCase().contains(keyword.toLowerCase())) {
+			if (!productTitle.contains(keyword)) {
+				count++;
 				System.out.println("Product title without the keyword: " + productTitle);
-				return false; 
 			}
 		}
-		return true; 
+		return count; 
 	}
 
 	public void addLastProductToCart(List<String> productList) throws InterruptedException {

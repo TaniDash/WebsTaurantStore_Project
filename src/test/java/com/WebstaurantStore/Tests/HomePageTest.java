@@ -10,7 +10,7 @@ public class HomePageTest extends TestBase {
 	HomePage homepage;
 	SoftAssert softAssert;
 
-	@Test
+	@Test (priority=0)
 	public void verifyHomePageAndSearchProduct() {
 		homepage = new HomePage(driver);
 		softAssert = new SoftAssert();
