@@ -9,7 +9,8 @@
     <classes>
       <class name="com.WebstaurantStore.Tests.SearchResultTest">
         <methods>
-          <include name="verifySearchAndAddToCart"/>
+          <include name="tearDown"/>
+          <include name="verifySearchAndProductTitle"/>
           <include name="init"/>
         </methods>
       </class> <!-- com.WebstaurantStore.Tests.SearchResultTest -->

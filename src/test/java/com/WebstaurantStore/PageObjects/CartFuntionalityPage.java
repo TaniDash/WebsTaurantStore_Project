@@ -1,6 +1,5 @@
 package com.WebstaurantStore.PageObjects;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,41 +15,48 @@ public class CartFuntionalityPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(how = How.XPATH, using = "//span[@id='cartItemCountSpan']")
-	private WebElement cartItemCount;
+	@FindBy(how = How.XPATH, using = "//a[contains(text(), 'View Cart')]")
+	private WebElement viewCart;
 	@FindBy(how = How.XPATH, using = "//h1[contains(text(), 'Cart')]")
 	private WebElement cartPageHeader;
 	@FindBy(how = How.XPATH, using = "//button[contains(text(), 'Empty Cart')]")
 	private WebElement emptyCartButton;
-	@FindBy(how = How.XPATH, using = "//*[@id='td']/div[11]/div/div/div/footer/button[1]")
-	private WebElement emptyButtonInPopUp;
+	@FindBy(how = How.XPATH, using = "//p[@id='empty-cart-body']")
+	private WebElement emptyCardBody;
+	@FindBy(how = How.XPATH, using = "//footer/button[@type='button' and contains(text(), 'Empty')]")
+	private WebElement emptyCartButtonInPopUp;
+	@FindBy(how = How.XPATH, using = "//div[@role='alertdialog']//div")
+	private WebElement alertDialogBox;
+	@FindBy(how = How.XPATH, using = "//p[@class='header-1']")
+	private WebElement cartEmptyHeaderEle;
+	
 
 
-	public boolean validateCartPage() {
-		cartItemCount.click();
+	public boolean validateCartPage() throws InterruptedException {
+		viewCart.click();
+		Thread.sleep(1500);
 		return cartPageHeader.isDisplayed();
 	}
 
-	public void emptyCartFuntionality() {
-		if (getCartItemCount()>0) {
-			emptyCartButton.click();
-			confirmEmptyCart();
-		}
+	public void emptyCartFunctionality() throws InterruptedException {
+	    if (emptyCartButton.isDisplayed() && emptyCartButton.isEnabled()) {
+	        emptyCartButton.click();
+	        Thread.sleep(1000);
+	        
+	        // Check if the pop-up box is displayed
+	        if (alertDialogBox.isDisplayed()) {
+	            String alertText = alertDialogBox.getText();
+	            System.out.println("Pop-up Box Text: " + alertText);
+	            
+	            // Perform necessary actions to close the pop-up box
+	            emptyCartButtonInPopUp.click();
+	            Thread.sleep(1000);
+	        }
+	    }
 	}
 
-	public int getCartItemCount() {
-		return Integer.parseInt(cartItemCount.getText());
-	}
-
-	private void confirmEmptyCart() {
-		Alert alert = driver.switchTo().alert();
-		String alertText = alert.getText();
-		if (alertText.equals("Are you sure you want to empty your cart?")) {
-			alert.accept();
-		} else {
-			System.out.println("Unexpected alert message: " + alertText);
-			alert.dismiss();
-		}
+	public boolean validateCartIsEmpty() {
+		return cartEmptyHeaderEle.isDisplayed();
 	}
 
 }

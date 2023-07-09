@@ -13,9 +13,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -43,24 +47,12 @@ public class TestBase {
 			Properties prop = new Properties();
 			prop.load(input);
 			url = prop.getProperty("url");
-//			browser = prop.getProperty("browser");
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-//	@BeforeTest
-	public void generateReport() {
-		sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator + "reports "
-				+ File.separator + "WebstaurantStoreExtentReport.html");
-		extent = new ExtentReports();
-		extent.attachReporter(sparkReporter);
-		sparkReporter.config().setTheme(Theme.STANDARD);
-		sparkReporter.config().setDocumentTitle("Automation Report");
-		sparkReporter.config().setReportName("Automation Test Results by Tania Dash");
-
-	}
+	
 	
 	@Parameters("browser")
 	@BeforeTest
@@ -86,7 +78,25 @@ public class TestBase {
 
 	}
 
+	@AfterTest
+	public void tearDown() {
+		driver.close();
+		driver.quit();
+	}
+	
+	
+	
+	
+//	@BeforeSuite
+	public void generateReport() {
+		sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") +"reports "+"WebstaurantStoreExtentReport.html");
+		extent = new ExtentReports();
+		extent.attachReporter(sparkReporter);
+		sparkReporter.config().setTheme(Theme.STANDARD);
+		sparkReporter.config().setDocumentTitle("Automation Report");
+		sparkReporter.config().setReportName("Automation Test Results by Tania Dash");
 
+	}
 
 //	@AfterMethod
 	public void afterMethod(ITestResult result) {
@@ -99,15 +109,11 @@ public class TestBase {
 		}
 	}
 
-//	@AfterTest
+//	@AfterSuite
 	public void afterTest() {
 		extent.flush();
 	}
 
-//	@AfterClass
-//	public void tearDown() {
-//		driver.close();
-//		driver.quit();
-//	}
+
 
 }
