@@ -1,6 +1,5 @@
 package com.WebstaurantStore.Tests;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,11 +13,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -36,6 +32,10 @@ public class TestBase {
 	public static WebDriver driver;
 	static String url;
 	static String browser;
+	
+	public ExtentReports extent;
+	public ExtentSparkReporter sparkReporter;
+	public ExtentTest logger;
 
 		
 	public static void readConfig() {
@@ -79,9 +79,7 @@ public class TestBase {
 		driver.quit();
 	}
 	
-	
-	
-	
+		
 
 
 

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="4" total="8" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="56982" started-at="2023-07-09T17:28:28Z" finished-at="2023-07-09T17:29:25Z">
+  <suite name="Suite" duration-ms="65327" started-at="2023-07-11T04:20:40Z" finished-at="2023-07-11T04:21:45Z">
     <groups>
     </groups>
-    <test name="ChromeTest" duration-ms="56982" started-at="2023-07-09T17:28:28Z" finished-at="2023-07-09T17:29:25Z">
+    <test name="ChromeTest" duration-ms="65327" started-at="2023-07-11T04:20:40Z" finished-at="2023-07-11T04:21:45Z">
       <class name="com.WebstaurantStore.Tests.HomePageTest">
-        <test-method status="PASS" signature="init(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@197d671]" name="init" is-config="true" duration-ms="3743" started-at="2023-07-09T17:28:28Z" finished-at="2023-07-09T17:28:32Z">
+        <test-method status="PASS" signature="init(java.lang.String, java.lang.reflect.Method)[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@79ad8b2f]" name="init" is-config="true" duration-ms="5683" started-at="2023-07-11T04:20:40Z" finished-at="2023-07-11T04:20:46Z">
           <params>
             <param index="0">
               <value>
@@ -21,30 +21,54 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="verifyHomePageAndSearchProduct()[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@197d671]" name="verifyHomePageAndSearchProduct" duration-ms="3668" started-at="2023-07-09T17:28:32Z" finished-at="2023-07-09T17:28:36Z">
+        <test-method status="PASS" signature="generateReport()[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@79ad8b2f]" name="generateReport" is-config="true" duration-ms="276" started-at="2023-07-11T04:20:46Z" finished-at="2023-07-11T04:20:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateReport -->
+        <test-method status="PASS" signature="verifyHomePageAndSearchProduct()[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@79ad8b2f]" name="verifyHomePageAndSearchProduct" duration-ms="4718" started-at="2023-07-11T04:20:46Z" finished-at="2023-07-11T04:20:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomePageAndSearchProduct -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@197d671]" name="tearDown" is-config="true" duration-ms="880" started-at="2023-07-09T17:29:24Z" finished-at="2023-07-09T17:29:25Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@79ad8b2f]" name="afterTest" is-config="true" duration-ms="316" started-at="2023-07-11T04:20:51Z" finished-at="2023-07-11T04:20:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.WebstaurantStore.Tests.HomePageTest@79ad8b2f]" name="tearDown" is-config="true" duration-ms="967" started-at="2023-07-11T04:21:44Z" finished-at="2023-07-11T04:21:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.WebstaurantStore.Tests.HomePageTest -->
       <class name="com.WebstaurantStore.Tests.CartFuntionalityTest">
-        <test-method status="PASS" signature="verifyCartFunctionality()[pri:3, instance:com.WebstaurantStore.Tests.CartFuntionalityTest@79ad8b2f]" name="verifyCartFunctionality" duration-ms="6873" started-at="2023-07-09T17:29:17Z" finished-at="2023-07-09T17:29:24Z">
+        <test-method status="PASS" signature="generateReport()[pri:0, instance:com.WebstaurantStore.Tests.CartFuntionalityTest@22635ba0]" name="generateReport" is-config="true" duration-ms="0" started-at="2023-07-11T04:21:37Z" finished-at="2023-07-11T04:21:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateReport -->
+        <test-method status="PASS" signature="verifyCartFunctionality()[pri:3, instance:com.WebstaurantStore.Tests.CartFuntionalityTest@22635ba0]" name="verifyCartFunctionality" duration-ms="6693" started-at="2023-07-11T04:21:37Z" finished-at="2023-07-11T04:21:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCartFunctionality -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.WebstaurantStore.Tests.CartFuntionalityTest@22635ba0]" name="afterTest" is-config="true" duration-ms="62" started-at="2023-07-11T04:21:44Z" finished-at="2023-07-11T04:21:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
       </class> <!-- com.WebstaurantStore.Tests.CartFuntionalityTest -->
       <class name="com.WebstaurantStore.Tests.SearchResultTest">
-        <test-method status="PASS" signature="verifySearchAndProductTitle()[pri:1, instance:com.WebstaurantStore.Tests.SearchResultTest@402e37bc]" name="verifySearchAndProductTitle" duration-ms="38534" started-at="2023-07-09T17:28:36Z" finished-at="2023-07-09T17:29:14Z">
+        <test-method status="PASS" signature="generateReport()[pri:0, instance:com.WebstaurantStore.Tests.SearchResultTest@1df82230]" name="generateReport" is-config="true" duration-ms="1" started-at="2023-07-11T04:20:51Z" finished-at="2023-07-11T04:20:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateReport -->
+        <test-method status="PASS" signature="verifySearchAndProductTitle()[pri:1, instance:com.WebstaurantStore.Tests.SearchResultTest@1df82230]" name="verifySearchAndProductTitle" duration-ms="43157" started-at="2023-07-11T04:20:51Z" finished-at="2023-07-11T04:21:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySearchAndProductTitle -->
-        <test-method status="PASS" signature="verifyProductAddedToCart()[pri:2, instance:com.WebstaurantStore.Tests.SearchResultTest@402e37bc]" name="verifyProductAddedToCart" duration-ms="3241" started-at="2023-07-09T17:29:14Z" finished-at="2023-07-09T17:29:17Z">
+        <test-method status="PASS" signature="verifyProductAddedToCart()[pri:2, instance:com.WebstaurantStore.Tests.SearchResultTest@1df82230]" name="verifyProductAddedToCart" duration-ms="3361" started-at="2023-07-11T04:21:34Z" finished-at="2023-07-11T04:21:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyProductAddedToCart -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.WebstaurantStore.Tests.SearchResultTest@1df82230]" name="afterTest" is-config="true" duration-ms="59" started-at="2023-07-11T04:21:37Z" finished-at="2023-07-11T04:21:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
       </class> <!-- com.WebstaurantStore.Tests.SearchResultTest -->
     </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->
